@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+
+
+
+
+@layer base {
+  :root {
+    /* Emerald design tokens — change these to retheme the whole site */
+    --color-bg:          #ecfdf5;   /* emerald-50  */
+    --color-surface:     #d1fae5;   /* emerald-100 */
+    --color-border:      #a7f3d0;   /* emerald-200 */
+    --color-muted:       #6ee7b7;   /* emerald-300 */
+    --color-primary:     #10b981;   /* emerald-500 */
+    --color-primary-dark:#059669;   /* emerald-600 */
+    --color-text:        #064e3b;   /* emerald-900 */
+    --color-text-muted:  #34d399;   /* emerald-400 */
+
+    /* 3D cinema */
+    --perspective: 1000px;
+    --scene-depth: 300px;
+  }
+
+  * { @apply box-border; }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-layer,
+    .cinematic-layer,
+    .float-layer {
+      animation: none !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(236, 253, 245, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border);
+  }
+
+  .glass-dark {
+    background: rgba(6, 78, 59, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(167, 243, 208, 0.2);
+  }
+
+  .scene-3d {
+    perspective: var(--perspective);
+    perspective-origin: 50% 40%;
+    transform-style: preserve-3d;
+  }
+
+  .gpu {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+/* Cinematic scroll scenes */
+.cinematic-scene {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Smooth parallax layers */
+.parallax-layer {
+  will-change: transform;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Floating animation for non-scroll elements */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-18px) rotate(0.5deg); }
+  66%       { transform: translateY(-8px) rotate(-0.3deg); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateX(0px) translateY(0px); }
+  25%       { transform: translateX(8px) translateY(-6px); }
+  75%       { transform: translateX(-6px) translateY(4px); }
+}
+
+@keyframes scale-breathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.015); }
+}
+
+.animate-float-slow   { animation: float-slow   6s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium  4s ease-in-out infinite; }
+.animate-drift        { animation: drift         8s ease-in-out infinite; }
+.animate-breathe      { animation: scale-breathe 4s ease-in-out infinite; }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
