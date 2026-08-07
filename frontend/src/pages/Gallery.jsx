@@ -3,14 +3,14 @@ import SEOHead from '../components/ui/SEOHead'
 import SectionHeading from '../components/ui/SectionHeading'
 import GalleryGrid from '../components/gallery/GalleryGrid'
 import ScrollReveal from '../components/animations/ScrollReveal'
-import { cloudinaryImages } from '../data/cloudinaryImages'
+import { galleryImages } from '../assets/images'
 import { cn } from '../utils/cn'
 
-const categories = ['All', ...new Set(cloudinaryImages.gallery.map((i) => i.category))]
+const categories = ['All', ...new Set(galleryImages.map((i) => i.category))]
 
 export default function Gallery() {
   const [active, setActive] = useState('All')
-  const filtered = active === 'All' ? cloudinaryImages.gallery : cloudinaryImages.gallery.filter((i) => i.category === active)
+  const filtered = active === 'All' ? galleryImages : galleryImages.filter((i) => i.category === active)
 
   return (
     <>
@@ -35,8 +35,8 @@ export default function Gallery() {
                 className={cn(
                   'px-4 py-2 rounded-full text-sm font-medium transition-colors',
                   active === cat
-                    ? 'bg-(--color-primary) text-white'
-                    : 'bg-(--color-surface) text-(--color-text-muted) hover:text-(--color-text) hover:bg-white border border-(--color-border)'
+                    ? 'bg-[var(--color-primary)] text-white'
+                    : 'bg-[var(--color-surface)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-white border border-[var(--color-border)]'
                 )}
               >
                 {cat}

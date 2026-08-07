@@ -20,14 +20,14 @@ export default function Navbar() {
           scrolled ? 'py-3 shadow-sm' : 'py-5'
         )}
         style={{
-          background: scrolled ? 'rgba(236,253,245,0.9)' : 'transparent',
+          background: scrolled ? 'rgba(209,250,229,0.9)' : 'transparent',
           backdropFilter: scrolled ? 'blur(16px)' : 'none',
           borderBottom: scrolled ? '1px solid var(--color-border)' : '1px solid transparent',
         }}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link to="/" className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
-            KD<span style={{ color: 'var(--color-primary)' }}>.</span>
+            KD
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
