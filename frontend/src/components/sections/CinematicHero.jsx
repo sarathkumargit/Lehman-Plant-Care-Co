@@ -204,25 +204,25 @@ function HeroText() {
         Premium Tree Services
       </span>
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
-        Where Nature<br />
-        <span className="text-emerald-800">Meets Expertise</span>
+        The Tree Service Clearence<br />
+        
       </h1>
-      <p className="mt-4 text-emerald-700 text-base md:text-lg leading-relaxed">
+      <p className="mt-4 text-emerald-100 text-base md:text-lg leading-relaxed">
         Professional tree care delivered with precision, safety, and a deep respect for the environment.
       </p>
       <div className="mt-8 flex flex-wrap gap-3 justify-center">
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 bg-emerald-600 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 bg-emerald-800 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5"
         >
           Get a Free Quote
         </Link>
-        <Link
-          to="/services"
-          className="inline-flex items-center gap-2 border border-emerald-300 text-emerald-700 font-medium px-7 py-3.5 rounded-xl hover:bg-emerald-100 transition-all"
+        <a
+          href="tel:+17165892600"
+          className="inline-flex items-center gap-2 border border-emerald-500 text-3xl text-emerald-50 font-medium px-7 py-3.5 rounded-xl hover:bg-emerald-800 transition-all"
         >
-          Our Services
-        </Link>
+          716-589-2600
+        </a>
       </div>
     </div>
   )

@@ -1,17 +1,17 @@
 export const siteConfig = {
   name: 'KD Websites',
-  tagline: 'Crafting Digital Experiences That Convert',
+  tagline: 'Tree services',
   description:
-    'We design and build high-performance websites that help businesses grow online.',
-  url: 'https://kdwebsites.com',
-  email: 'hello@kdwebsites.com',
-  phone: '+1 (555) 000-0000',
-  address: '123 Design Street, Creative City, CA 90001',
+    'The Tree Service Clearence is a full-service arboriculture company serving residential and commercial properties across the metro area.',
+  url: 'https://kdmarketinggroup.com/',
+  email: 'sales@treeservicesclarence.com',
+  phone: '+1 716-589-2600',
+  address: '9950 County Rd, Clarence Center',
   social: {
-    instagram: 'https://instagram.com/kdwebsites',
-    twitter: 'https://twitter.com/kdwebsites',
-    linkedin: 'https://linkedin.com/company/kdwebsites',
-    facebook: 'https://facebook.com/kdwebsites',
+    instagram: 'https://kdmarketinggroup.com/',
+    twitter: 'https://kdmarketinggroup.com/',
+    linkedin: 'https://kdmarketinggroup.com/',
+    facebook: 'https://kdmarketinggroup.com/',
   },
   seo: {
     defaultTitle: 'KD Websites — Premium Web Design & Development',

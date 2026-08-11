@@ -40,7 +40,7 @@ export default function Navbar() {
             <Link
               to="/contact"
               className="hidden md:inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-xl transition-all text-sm hover:-translate-y-0.5 shadow-sm"
-              style={{ background: 'var(--color-primary)', color: '#fff' }}
+              style={{ background: 'var(--color-text)', color: '#fff' }}
             >
               Get a Quote
             </Link>

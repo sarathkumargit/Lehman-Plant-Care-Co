@@ -3,7 +3,7 @@ import HeroSection from '../components/sections/HeroSection'
 import StatsSection from '../components/sections/StatsSection'
 import ServicesPreview from '../components/sections/ServicesPreview'
 import AboutSection from '../components/sections/AboutSection'
-import WhyChooseUs from '../components/sections/WhyChooseUs'
+import Contact from "./Contact";
 
 
 export default function Home() {
@@ -14,7 +14,8 @@ export default function Home() {
       <StatsSection />
       <ServicesPreview />
       <AboutSection />
-      <WhyChooseUs />
+      <Contact />
+      
     
     </div>
   )

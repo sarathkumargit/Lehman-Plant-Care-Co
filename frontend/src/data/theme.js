@@ -6,7 +6,7 @@ export const theme = {
     bg: '#ffffff',
     bgCard: '#f9fafb',
     bgBorder: '#e5e7eb',
-    textMuted: '#6b7280',
+    textMuted: '#6b728',
   },
   fonts: {
     sans: "'Inter', sans-serif",

@@ -8,25 +8,24 @@ import ScrollReveal from '../components/animations/ScrollReveal'
 export default function About() {
   return (
     <>
-      <SEOHead title="About Us" pathname="/about" description="Learn about the KD Websites team and our mission to build world-class web experiences." />
+      <SEOHead title="About Us" pathname="/about" description="Learn about The Tree Service Clearence and our commitment to safe, professional tree care for homes and businesses." />
 
       {/* Hero */}
-      <section className="pt-40 pb-24">
+      <section className="pt-40 pb-20 bg-emerald-200">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <SectionHeading
-              eyebrow="About KD Websites"
-              title="We Turn Ideas Into Digital Reality"
-              description="Founded in 2019, we're a passionate team of designers and developers who believe great websites are a business's most powerful asset."
+              eyebrow="About Us"
+              title="Rooted in Craft, Grown Through Trust"
             />
           </ScrollReveal>
 
-          <ScrollReveal delay={100} className="mt-12 prose prose-invert max-w-3xl mx-auto text-neutral-400 text-lg leading-relaxed space-y-4">
+          <ScrollReveal delay={100} className="mt-12 prose prose-invert max-w-3xl mx-auto text-black text-lg leading-relaxed space-y-4">
             <p>
-              What started as a two-person freelance studio has grown into a full-service web agency trusted by businesses across the globe. Our approach is simple: listen deeply, design boldly, and build with precision.
+              What started as a single crew with a truck and a chainsaw has grown into a full-service tree care company trusted by homeowners and businesses across the area. Our approach is simple: assess honestly, work safely, and leave every property cleaner than we found it.
             </p>
             <p>
-              Every project we take on gets the same level of care — whether you're a local café or a funded startup. We believe in transparent pricing, honest timelines, and work that actually moves the needle.
+              Every job gets the same level of care — whether it's a single storm-damaged limb or a full-property clearing. We believe in upfront pricing, punctual crews, and work that holds up long after we've packed up the truck.
             </p>
           </ScrollReveal>
         </div>

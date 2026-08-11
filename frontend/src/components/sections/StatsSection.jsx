@@ -2,10 +2,10 @@ import StatCard from '../cards/StatCard'
 import ScrollReveal from '../animations/ScrollReveal'
 
 const stats = [
-  { value: '150', suffix: '+', label: 'Projects Delivered' },
+  { value: '100', suffix: '+', label: 'Projects Delivered' },
   { value: '98', suffix: '%', label: 'Client Satisfaction' },
-  { value: '5', suffix: 'yr', label: 'Years in Business' },
-  { value: '40', suffix: '+', label: 'Happy Clients' },
+  { value: '11', suffix: 'yr', label: 'Years in Business' },
+  { value: '88', suffix: '+', label: 'Happy Clients' },
 ]
 
 export default function StatsSection() {

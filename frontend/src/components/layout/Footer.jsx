@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
+import { InstagramIcon, TwitterIcon, LinkedinIcon, FacebookIcon } from '../icons/SocialIcons'
 import { siteConfig } from '../../data/siteConfig'
 import { navLinks } from '../../data/navLinks'
 
 const socialLinks = [
-  { key: 'instagram', label: 'Instagram' },
-  { key: 'twitter', label: 'Twitter' },
-  { key: 'linkedin', label: 'LinkedIn' },
-  { key: 'facebook', label: 'Facebook' },
+  { key: 'instagram', label: 'Instagram', Icon: InstagramIcon },
+  { key: 'twitter', label: 'Twitter', Icon: TwitterIcon },
+  { key: 'linkedin', label: 'LinkedIn', Icon: LinkedinIcon },
+  { key: 'facebook', label: 'Facebook', Icon: FacebookIcon },
 ]
 
 export default function Footer() {
@@ -23,7 +24,7 @@ export default function Footer() {
               {siteConfig.description}
             </p>
             <div className="flex gap-3 mt-6">
-              {socialLinks.map(({ key, label }) => {
+              {socialLinks.map(({ key, label, Icon }) => {
                 const url = siteConfig.social[key]
                 if (!url) return null
                 return (
@@ -35,7 +36,7 @@ export default function Footer() {
                     aria-label={label}
                     className="w-9 h-9 rounded-lg bg-[var(--color-bg)] flex items-center justify-center text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:bg-white transition-colors border border-[var(--color-border)]"
                   >
-                    <span className="text-xs font-semibold">{label.slice(0, 1)}</span>
+                    <Icon size={16} />
                   </a>
                 )
               })}
