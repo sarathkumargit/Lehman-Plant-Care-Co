@@ -9,6 +9,7 @@ import { services } from '../../data/services'
 import { clamp } from '../../hooks/useCinematicScroll'
 import truckImg from '../../assets/truck.png'
 import cutImg   from '../../assets/cut.png'
+import roadImg from '../../assets/road.jpg'
 
 export default function ServicesPreview() {
   const preview = services.slice(0, 3)
@@ -50,9 +51,29 @@ const truckX      = truckStartX + progress * (truckEndX - truckStartX)
     <section
       ref={sectionRef}
       className="relative py-32 overflow-hidden"
-      style={{ background: 'var(--color-border)' }}
+      
     >
       <ParallaxScene />
+      {/* ════════════════════════════════════════════
+    LAYER 0 — BACKGROUND
+    road.jpg  |  slow parallax drift
+    z: 2  (behind everything)
+════════════════════════════════════════════ */}
+<div
+  className="absolute inset-0 z-[0] pointer-events-none overflow-hidden"
+>
+  <img
+    src={roadImg}
+    alt=""
+    aria-hidden
+    className="w-full h-full object-cover"
+    style={{
+      transform: `translate3d(0, ${-progress * 60}px, 0) scale(1.15)`,
+      transformOrigin: 'center center',
+      opacity: 0.90,
+    }}
+  />
+</div>
 
       {/* ════════════════════════════════════════════
           LAYER 1 — BACK

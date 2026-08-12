@@ -16,7 +16,7 @@ export default function Gallery() {
     <>
       <SEOHead title="Gallery" pathname="/gallery" description="Browse our portfolio of web design and development projects." />
 
-      <section className="pt-40 pb-24">
+      <section className="pt-40 pb-500">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <SectionHeading

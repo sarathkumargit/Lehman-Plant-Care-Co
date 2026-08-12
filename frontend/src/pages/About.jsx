@@ -1,8 +1,9 @@
 import SEOHead from '../components/ui/SEOHead'
 import SectionHeading from '../components/ui/SectionHeading'
 import StatsSection from '../components/sections/StatsSection'
-import WhyChooseUs from '../components/sections/WhyChooseUs'
+import AboutSection from '../components/sections/AboutSection'
 import ScrollReveal from '../components/animations/ScrollReveal'
+import tt13Img from '../assets/tt13.png'
 
 
 export default function About() {
@@ -11,7 +12,15 @@ export default function About() {
       <SEOHead title="About Us" pathname="/about" description="Learn about The Tree Service Clearence and our commitment to safe, professional tree care for homes and businesses." />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 bg-emerald-200">
+     <section className="relative pt-40 pb-20 bg-emerald-100 overflow-hidden">
+        {/* tt13.png — decorative top layer, sits above every image/card in this section */}
+        <img
+          src={tt13Img}
+          alt=""
+          aria-hidden
+          className="absolute  right-[4%] w-40 md:w-56 h-auto object-contain pointer-events-none z-[999]"
+        />
+
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <SectionHeading
@@ -32,7 +41,8 @@ export default function About() {
       </section>
 
       <StatsSection />
-      <WhyChooseUs />
+      <AboutSection />
+      
      
     </>
   )
