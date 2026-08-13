@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 import { InstagramIcon, TwitterIcon, LinkedinIcon, FacebookIcon } from '../icons/SocialIcons'
 import { siteConfig } from '../../data/siteConfig'
 import { navLinks } from '../../data/navLinks'
+import logo from '../../assets/logo.png'
 
 const socialLinks = [
   { key: 'instagram', label: 'Instagram', Icon: InstagramIcon },
@@ -17,10 +18,10 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
-            <Link to="/" className="text-3xl font-bold text-[var(--color-text)]">
-              KD<span className="text-[var(--color-primary)]">.</span>
-            </Link>
-            <p className="mt-4 text-[var(--color-text-muted)] max-w-sm leading-relaxed">
+              <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="The Tree Service Clearence" className="h-10 w-auto object-contain" />
+          </Link>
+            <p className="mt-4 text-[var(--color-text-black)] max-w-sm leading-relaxed">
               {siteConfig.description}
             </p>
             <div className="flex gap-3 mt-6">
@@ -50,7 +51,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors text-sm"
+                    className="text-[var(--color-text-black)] hover:text-[var(--color-primary)] transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -61,20 +62,20 @@ export default function Footer() {
 
           <div>
             <h3 className="text-[var(--color-text)] font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 ">
               {[
                 { Icon: Mail, text: siteConfig.email, href: `mailto:${siteConfig.email}` },
                 { Icon: Phone, text: siteConfig.phone, href: `tel:${siteConfig.phone}` },
                 { Icon: MapPin, text: siteConfig.address, href: null },
               ].map(({ Icon, text, href }) => (
                 <li key={text} className="flex items-start gap-3">
-                  <Icon size={16} className="text-[var(--color-primary)] mt-0.5 shrink-0" />
+                  <Icon size={16} className="text-[var(--color-black)] mt-0.5 shrink-0" />
                   {href ? (
-                    <a href={href} className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors text-sm">
+                    <a href={href} className="text-[var(--color-text-black)] hover:text-[var(--color-text)] transition-colors text-sm">
                       {text}
                     </a>
                   ) : (
-                    <span className="text-[var(--color-text-muted)] text-sm">{text}</span>
+                    <span className="text-[var(--color-text-black)] text-sm">{text}</span>
                   )}
                 </li>
               ))}
@@ -87,10 +88,10 @@ export default function Footer() {
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] text-sm transition-colors">
+            <Link to="/privacy-policy" className="text-[var(--color-text-black)] hover:text-[var(--color-text)] text-sm transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-conditions" className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] text-sm transition-colors">
+            <Link to="/terms-conditions" className="text-[var(--color-text-black)] hover:text-[var(--color-text)] text-sm transition-colors">
               Terms & Conditions
             </Link>
           </div>

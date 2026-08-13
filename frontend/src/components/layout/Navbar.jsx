@@ -6,6 +6,7 @@ import { useScrollPosition } from '../../hooks/useScrollPosition'
 import { navLinks } from '../../data/navLinks'
 import NavLink from './NavLink'
 import MobileMenu from './MobileMenu'
+import logo from '../../assets/logo.png'
 
 export default function Navbar() {
   const scrollY = useScrollPosition()
@@ -26,8 +27,8 @@ export default function Navbar() {
         }}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
-            KD
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="The Tree Service Clearence" className="h-10 w-auto object-contain" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
