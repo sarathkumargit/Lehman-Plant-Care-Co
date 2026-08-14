@@ -5,6 +5,7 @@ import GHLOptInForm from '../components/forms/GHLOptInForm'
 import LocationMap from '../components/forms/LocationMap'
 import cutImg from '../assets/cut.png'
 import { clamp } from '../hooks/useCinematicScroll'
+import ww1 from '../assets/ww1.png'
 
 import { siteConfig } from '../data/siteConfig'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
@@ -13,7 +14,7 @@ const contactInfo = [
   { Icon: Mail, label: 'Email', value: siteConfig.email, href: `mailto:${siteConfig.email}` },
   { Icon: Phone, label: 'Phone', value: siteConfig.phone, href: `tel:${siteConfig.phone}` },
   { Icon: MapPin, label: 'Address', value: siteConfig.address },
-  { Icon: Clock, label: 'Hours', value: 'Mon–Fri, 9am–6pm EST' },
+  { Icon: Clock, label: 'Hours', value: 'Mon–Sat, 8am–6pm EST' },
 ]
 
 export default function Contact() {
@@ -68,7 +69,15 @@ export default function Contact() {
   return (
     <>
       <SEOHead title="Contact" pathname="/contact" description="Get in touch with KD Websites to start your project." />
-
+         <section className="relative pt-40 pb-10 overflow-hidden">
+        <img
+                 src={ww1}
+                 alt=""
+                 aria-hidden
+                 className="absolute inset-0 w-full h-full object-cover"
+               />
+          </section>   
+             
       <section ref={sectionRef} className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
         {/* cut.png — desktop only, travels top → bottom, fades in as it moves */}
         {isDesktop && (
@@ -96,14 +105,14 @@ export default function Contact() {
           </div>
         )}
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-2 relative z-10">
           <SectionHeading
             eyebrow="Contact Us"
             title="Let's Build Something Together"
             description="Tell us about your project and we'll get back to you within 24 hours."
           />
 
-          <div className="mt-10 lg:mt-16 grid lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="mt-5 lg:mt-16 grid lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Info */}
             <div className="lg:col-span-2 space-y-6">
               {contactInfo.map(({ Icon, label, value, href }) => (

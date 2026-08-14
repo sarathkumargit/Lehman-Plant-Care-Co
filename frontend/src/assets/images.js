@@ -1,10 +1,12 @@
-import t2    from './t2.png'
+import hero7 from './hero7.webp'
 import t4    from './t4.png'
-import tree3 from './tree3.png'
-import tt11  from './tt11.png'
-import tt13  from './tt13.png'
-import tt14  from './tt14.png'
+import img1  from './img1.webp'
+import img4  from './img4.webp'
+import g3  from './g3.webp'
 import ww1   from './ww1.png'
+import img8 from './img8.webp'
+
+
 
 export const heroImage = {
   src: ww1,
@@ -12,22 +14,22 @@ export const heroImage = {
 }
 
 export const aboutImage = {
-  src: tree3,
+  src: img4,
   alt: 'Our tree service team at work',
 }
 
 export const galleryImages = [
-  { src: t2,    alt: 'Tree removal project',       category: 'Removal'     },
-  { src: t4,    alt: 'Tree trimming project',      category: 'Trimming'    },
-  { src: tt11,  alt: 'Tree clearance project',     category: 'Clearance'   },
-  { src: tt13,  alt: 'Stump grinding project',     category: 'Stump'       },
-  { src: tt14,  alt: 'Tree maintenance project',   category: 'Maintenance' },
-  { src: ww1,   alt: 'Emergency tree removal',     category: 'Removal'     },
-  { src: tree3, alt: 'Canopy reduction project',   category: 'Trimming'    },
+  { src: hero7,    alt: 'Tree removal project',       category: 'Removal'     },
+  { src: img8,    alt: 'Tree trimming project',      category: 'Trimming'    },
+  { src: img1,  alt: 'Tree clearance project',     category: 'Clearance'   },
+  { src: img4,  alt: 'Stump grinding project',     category: 'Stump'       },
+  { src: g3,  alt: 'Tree maintenance project',   category: 'Maintenance' },
+  { src: hero7,   alt: 'Emergency tree removal',     category: 'Removal'     },
+  { src: img8, alt: 'Canopy reduction project',   category: 'Trimming'    },
 ]
 
 export const testimonialAvatars = [
-  { src: tt13, alt: 'S.'   },
-  { src: tt14, alt: 'K.'   },
-  { src: t2,   alt: 'Tom.' },
+  { src: img1, alt: 'S.'   },
+  { src: g3, alt: 'K.'   },
+  { src: hero7,   alt: 'Tom.' },
 ]

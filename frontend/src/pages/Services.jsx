@@ -34,17 +34,16 @@ export default function Services() {
     }
   }, [])
 
- const vw = typeof window !== 'undefined' ? window.innerWidth : 1200
-// ── Layer 3: truck  LEFT → RIGHT  (X only) ──
-const truckStartX = -vw * 0.1
-const truckEndX   = vw * 0.75
-const truckX      = truckStartX + progress * (truckEndX - truckStartX)
+  const vw = typeof window !== 'undefined' ? window.innerWidth : 1200
+  // ── Layer 3: truck  LEFT → RIGHT  (X only) ──
+  const truckStartX = -vw * 0.1
+  const truckEndX   = vw * 0.75
+  const truckX      = truckStartX + progress * (truckEndX - truckStartX)
 
   // ── Layer 1: cut  BOTTOM → TOP  (Y only) ──
   const cutStartY = -220
   const cutEndY   = 700
   const cutY      = cutStartY + progress * (cutEndY - cutStartY)
-
 
   return (
     <>
@@ -52,7 +51,7 @@ const truckX      = truckStartX + progress * (truckEndX - truckStartX)
 
       <section
         ref={sectionRef}
-        className="relative py-32 overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 md:pb-32 overflow-hidden"
       >
         <ParallaxScene />
 
@@ -71,12 +70,16 @@ const truckX      = truckStartX + progress * (truckEndX - truckStartX)
           />
         </div>
 
-        {/* LAYER 1 — cut.png rises BOTTOM → TOP */}
+        {/*
+          LAYER 1 — cut.png rises BOTTOM → TOP.
+          Hidden on phones (per the pattern used on the Hero/About
+          pages) — decorative only, and cramped screens don't have
+          room for it without overlapping the service cards.
+        */}
         <div
-          className="absolute left-[5%] z-[5] pointer-events-none"
+          className="hidden sm:block absolute left-[5%] z-[5] pointer-events-none w-[42%] sm:w-[38%] md:w-1/2"
           style={{
             top: 0,
-            width: '50%',
             maxWidth: '340px',
             transform: `translate3d(0, ${cutY}px, 0)`,
             opacity: clamp(progress * 3.5, 0, 1),
@@ -105,7 +108,7 @@ const truckX      = truckStartX + progress * (truckEndX - truckStartX)
             />
           </ScrollReveal>
 
-          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-10 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {services.map((service, i) => (
               <ScrollReveal key={service.id} delay={i * 80} id={service.id}>
                 <ServiceCard service={service} />
@@ -114,12 +117,16 @@ const truckX      = truckStartX + progress * (truckEndX - truckStartX)
           </div>
         </div>
 
-        {/* LAYER 3 — truck travels LEFT → RIGHT */}
+        {/*
+          LAYER 3 — truck travels LEFT → RIGHT.
+          Also hidden on phones — same reasoning as the cut layer,
+          and its animated X-translate is wide enough to cause
+          horizontal overflow on narrow viewports.
+        */}
         <div
-          className="absolute bottom-0 z-[50] pointer-events-none"
+          className="hidden sm:block absolute bottom-0 z-[50] pointer-events-none w-[38%] sm:w-[42%] md:w-[44%]"
           style={{
             left: 0,
-            width: '44%',
             maxWidth: '580px',
             transform: `translate3d(${truckX}px, 0, 0)`,
             opacity: clamp(progress * 2.5, 0, 1),

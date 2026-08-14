@@ -35,7 +35,7 @@ export default function CinematicHero() {
     <section
       ref={containerRef}
       className="relative w-full overflow-hidden"
-      style={{ height: '100vh' }}
+      style={{ height: '100svh' }}
     >
 
       {/* ══════════════════════════════════════
@@ -62,9 +62,10 @@ export default function CinematicHero() {
           Stays anchored to top-left corner.
           z: 4  (above mid trees so it reads
           as coming FORWARD past them)
+          Hidden on mobile — decorative only.
       ══════════════════════════════════════ */}
       <div
-        className="absolute top-0 left-0 z-[4] w-[26%] h-[58%] pointer-events-none"
+        className="hidden sm:block absolute top-0 left-0 z-[4] w-[34%] sm:w-[30%] md:w-[26%] h-[45%] sm:h-[52%] md:h-[58%] pointer-events-none"
         style={{
           transform: `scale(${1 + progress * 0.55})`,
           transformOrigin: 'top left',
@@ -85,12 +86,15 @@ export default function CinematicHero() {
       </div>
 
       {/* ══════════════════════════════════════
-          LAYER 2b — t4 TOP-RIGHT zooms IN
+          LAYER 2b — t4 (tt11.png) TOP-RIGHT zooms IN
           Mirror of t2, anchored top-right.
           z: 4
+          Hidden on mobile per request — only
+          shown from the "sm" breakpoint (tablet)
+          upward, so phones never render it.
       ══════════════════════════════════════ */}
       <div
-        className="absolute top-0 right-0 z-[4] w-[24%] h-[55%] pointer-events-none"
+        className="hidden sm:block absolute top-0 right-0 z-[4] w-[30%] md:w-[24%] h-[42%] md:h-[55%] pointer-events-none"
         style={{
           transform: `scale(${1 + progress * 0.55})`,
           transformOrigin: 'top right',
@@ -109,9 +113,10 @@ export default function CinematicHero() {
       {/* ══════════════════════════════════════
           LAYER 2c — tt3 recedes (exits right)
           z: 2  |  parallax: recede away
+          Hidden on mobile — too busy on small screens.
       ══════════════════════════════════════ */}
       <div
-        className="absolute bottom-[8%] left-[58%] z-[2] w-[16%] h-[42%] pointer-events-none"
+        className="hidden md:block absolute bottom-[8%] left-[58%] z-[2] w-[16%] h-[42%] pointer-events-none"
         style={{
           transform: `translate3d(${scrollY * 0.2}px, ${scrollY * 0.25}px, 0) scale(${1 - progress * 0.3}) rotate(2deg)`,
           transformOrigin: 'bottom center',
@@ -129,11 +134,13 @@ export default function CinematicHero() {
       {/* ══════════════════════════════════════
           LAYER 3 — mid plane trees (recede)
           z: 3  |  parallax: 0.35
+          Scaled down on mobile so they don't
+          crowd the hero text card.
       ══════════════════════════════════════ */}
 
       {/* Left — exits left */}
       <div
-        className="absolute bottom-0 left-0 z-[3] w-[38%] h-[75%]"
+        className="absolute bottom-0 left-0 z-[3] w-[48%] sm:w-[42%] md:w-[38%] h-[45%] sm:h-[62%] md:h-[75%]"
         style={{
           transform: `translate3d(${scrollY * -0.18}px, ${scrollY * 0.35}px, 0)`,
           opacity: clamp(1 - progress * 0.7, 0, 1),
@@ -144,7 +151,7 @@ export default function CinematicHero() {
 
       {/* Right — exits right */}
       <div
-        className="absolute bottom-0 right-0 z-[3] w-[38%] h-[75%]"
+        className="absolute bottom-0 right-0 z-[3] w-[48%] sm:w-[42%] md:w-[38%] h-[45%] sm:h-[62%] md:h-[75%]"
         style={{
           transform: `translate3d(${scrollY * 0.18}px, ${scrollY * 0.35}px, 0)`,
           opacity: clamp(1 - progress * 0.7, 0, 1),
@@ -172,7 +179,7 @@ export default function CinematicHero() {
           z: 10
       ══════════════════════════════════════ */}
       <div
-        className="absolute top-[42%] left-1/2 z-[10]"
+        className="absolute top-[42%] left-1/2 z-[10] w-full px-4 sm:px-0 sm:w-auto"
         style={{
           transform: `translate3d(-50%, calc(-50% + ${scrollY * 0.5}px), 0)`,
           opacity: clamp(1 - progress * 1.4, 0, 1),
@@ -183,15 +190,15 @@ export default function CinematicHero() {
 
       {/* Scroll indicator */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
         style={{ opacity: clamp(1 - progress * 3, 0, 1) }}
       >
-        <span className="text-emerald-800/70 text-xs font-semibold tracking-widest uppercase">Scroll</span>
-        <ArrowDown size={18} className="text-emerald-700/60 animate-bounce" />
+        <span className="text-emerald-800/70 text-[10px] sm:text-xs font-semibold tracking-widest uppercase">Scroll</span>
+        <ArrowDown size={16} className="sm:w-[18px] sm:h-[18px] text-emerald-700/60 animate-bounce" />
       </div>
 
       {/* Bottom white fade */}
-      
+
 
     </section>
   )
@@ -199,27 +206,27 @@ export default function CinematicHero() {
 
 function HeroText() {
   return (
-    <div className="rounded-3xl px-8 py-10 md:px-12 md:py-12 text-center max-w-xl w-[90vw] shadow-2xl shadow-emerald-800">
-      <span className="inline-block text-emerald-800 text-xs font-bold tracking-[0.25em] uppercase mb-3">
+    <div className="rounded-3xl px-6 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center max-w-xl w-full sm:w-[90vw] shadow-2xl shadow-emerald-800">
+      <span className="inline-block text-emerald-800 text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-3">
         Premium Tree Services
       </span>
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
         The Tree Service Clearence<br />
-        
+
       </h1>
-      <p className="mt-4 text-emerald-100 text-base md:text-lg leading-relaxed">
+      <p className="mt-4 text-emerald-100 text-sm sm:text-base md:text-lg leading-relaxed">
         Professional tree care delivered with precision, safety, and a deep respect for the environment.
       </p>
-      <div className="mt-8 flex flex-wrap gap-3 justify-center">
+      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 justify-center items-center">
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 bg-emerald-800 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-800 text-white font-semibold px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5"
         >
           Get a Free Quote
         </Link>
         <a
           href="tel:+17165892600"
-          className="inline-flex items-center gap-2 border border-emerald-500 text-3xl text-emerald-50 font-medium px-7 py-3.5 rounded-xl hover:bg-emerald-800 transition-all"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-emerald-500 text-lg sm:text-xl md:text-2xl text-emerald-50 font-medium px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl hover:bg-emerald-800 transition-all"
         >
           716-589-2600
         </a>

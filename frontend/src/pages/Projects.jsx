@@ -17,7 +17,7 @@ const DESCRIPTIONS = {
   Maintenance: 'Ongoing care and health checks for mature trees.',
 }
 
-export default function Gallery() {
+export default function Projects() {
   const [active, setActive] = useState('All')
   const filtered =
     active === 'All' ? galleryImages : galleryImages.filter((i) => i.category === active)

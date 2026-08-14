@@ -4,7 +4,7 @@ export default function SectionHeading({ eyebrow, title, description, align = 'c
   return (
     <div className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center', align === 'left' && 'text-left', className)}>
       {eyebrow && (
-        <span className="inline-block text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-primary)' }}>
+        <span className="inline-block text-4xl font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-text)' }}>
           {eyebrow}
         </span>
       )}
@@ -12,7 +12,7 @@ export default function SectionHeading({ eyebrow, title, description, align = 'c
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-lg leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+        <p className="mt-4 text-lg leading-relaxed" style={{ color: 'var(--color-text)' }}>
           {description}
         </p>
       )}
