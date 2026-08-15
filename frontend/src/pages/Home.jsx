@@ -28,7 +28,7 @@ export default function Home() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-950">
           Ready to get started?
         </h2>
-        <p className="mt-3 text-[var(--color-text-muted)] max-w-md mx-auto">
+        <p className="mt-3 text-emerald-700 max-w-md mx-auto">
           Tell us about your project and we'll get back to you within 24 hours.
         </p>
         <div className="mt-6">

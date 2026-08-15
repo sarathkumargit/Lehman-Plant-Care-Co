@@ -22,8 +22,8 @@ export default function Footer() {
             <img
               src={logo}
               alt="The Tree Service Clearence"
-              width={142}
-              height={144}
+              width={138}
+              height={140}
               loading="lazy"
               className="h-10 w-auto object-contain"
             />
@@ -91,7 +91,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-[var(--color-border)] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[var(--color-text-muted)] text-sm">
+          <p className="text-emerald-800 text-sm">
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex gap-6">

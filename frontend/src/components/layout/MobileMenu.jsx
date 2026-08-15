@@ -25,7 +25,12 @@ export default function MobileMenu({ isOpen, onClose }) {
           <span className="text-xl font-bold" style={{ color: 'var(--color-text)' }}>
             KD<span style={{ color: 'var(--color-primary)' }}>.</span>
           </span>
-          <button onClick={onClose} className="transition-colors" style={{ color: 'var(--color-text-muted)' }}>
+          <button
+            onClick={onClose}
+            className="transition-colors"
+            aria-label="Close menu"
+            style={{ color: 'var(--color-text-muted)' }}
+          >
             <X size={24} />
           </button>
         </div>

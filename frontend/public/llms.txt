@@ -1,0 +1,22 @@
+# Lehman Plant Care Co
+
+> Lehman Plant Care Co (The Tree Service Clearence) is a professional tree
+> care company serving residential and commercial properties, offering tree
+> trimming, pruning, removal, and emergency storm cleanup.
+
+Lehman Plant Care Co provides expert arboriculture services delivered with
+precision, safety, and respect for the environment. The site below covers
+our services, past projects, and how to reach us for a free quote.
+
+## Pages
+
+- [Home](https://lehman-plant-care-co.vercel.app/): Overview of Lehman Plant Care Co and our tree care services.
+- [About](https://lehman-plant-care-co.vercel.app/about): Background on our team and approach to tree care.
+- [Services](https://lehman-plant-care-co.vercel.app/services): Full list of tree services we offer, including trimming, pruning, removal, and storm cleanup.
+- [Projects](https://lehman-plant-care-co.vercel.app/projects): Examples of completed tree care projects.
+- [Contact](https://lehman-plant-care-co.vercel.app/contact): Request a free quote or get in touch with our team.
+
+## Contact
+
+- Phone: +1 516-347-7526
+- Address: 126 Duffy Ave, Hicksville, NY 11801, United States

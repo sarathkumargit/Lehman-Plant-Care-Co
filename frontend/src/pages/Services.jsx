@@ -142,8 +142,8 @@ export default function Services() {
             src={truckImg}
             alt=""
             aria-hidden
-            width={460}
-            height={251}
+            width={330}
+            height={180}
             loading="lazy"
             className="w-full h-auto object-contain"
             style={{

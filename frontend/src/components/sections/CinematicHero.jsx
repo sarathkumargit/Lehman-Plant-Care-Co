@@ -7,9 +7,15 @@ import bgImg from '../../assets/ww1.webp'
 import t2Img    from '../../assets/cut.webp'
 import t4Img    from '../../assets/tt11.webp'
 import tt3Img   from '../../assets/tt13.webp'
-import leftImg  from '../../assets/tt13.webp'
-import rightImg from '../../assets/tt13.webp'
 import fgImg    from '../../assets/t2.webp'
+
+// leftImg/rightImg are the hero's LCP candidates (fetchpriority="high").
+// They point at the stable /lcp-hero.webp copy in public/ (same image as
+// tt13.webp) instead of the Vite-hashed asset import, so the URL matches
+// the <link rel="preload"> in index.html and the browser can start the
+// request before React even mounts.
+const leftImg  = '/lcp-hero.webp'
+const rightImg = '/lcp-hero.webp'
 
 export default function CinematicHero() {
   const containerRef = useRef(null)
@@ -134,8 +140,8 @@ export default function CinematicHero() {
           src={tt3Img}
           alt=""
           aria-hidden
-          width={400}
-          height={391}
+          width={350}
+          height={342}
           loading="lazy"
           className="w-full h-full object-contain object-bottom"
         />
@@ -160,8 +166,8 @@ export default function CinematicHero() {
           src={leftImg}
           alt=""
           aria-hidden
-          width={400}
-          height={391}
+          width={350}
+          height={342}
           fetchPriority="high"
           className="w-full h-full object-contain object-bottom"
         />
@@ -179,8 +185,8 @@ export default function CinematicHero() {
           src={rightImg}
           alt=""
           aria-hidden
-          width={400}
-          height={391}
+          width={350}
+          height={342}
           fetchPriority="high"
           className="w-full h-full object-contain object-bottom"
         />
@@ -240,7 +246,7 @@ function HeroText() {
         Lehman Plant Care Co<br />
 
       </h1>
-      <p className="mt-4 text-emerald-100 text-sm sm:text-base md:text-lg leading-relaxed">
+      <p className="mt-4 text-emerald-200 text-sm sm:text-base md:text-lg leading-relaxed">
         Professional tree care delivered with precision, safety, and a deep respect for the environment.
       </p>
       <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 justify-center items-center">
@@ -252,7 +258,7 @@ function HeroText() {
         </Link>
         <a
           href="tel:+17165892600"
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-emerald-500 text-lg sm:text-xl md:text-2xl text-emerald-50 font-medium px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl hover:bg-emerald-800 transition-all"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-emerald-600 text-lg sm:text-xl md:text-2xl text-emerald-100 font-medium px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl hover:bg-emerald-800 hover:text-white transition-all"
         >
           +1 516-347-7526
         </a>

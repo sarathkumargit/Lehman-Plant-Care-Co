@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Stable, non-hashed copy of the hero's LCP image (see
+      src/components/sections/CinematicHero.jsx leftImg/rightImg), preloaded
+      directly from the static HTML so the browser can discover and
+      prioritize the request before any JS runs. This is a pure client-side
+      rendered app, so without this the LCP <img> only exists once React
+      mounts and Lighthouse's "request discoverable in initial document"
+      check has nothing to find.
+    -->
+    <link rel="preload" as="image" href="/lcp-hero.webp" fetchpriority="high" type="image/webp" />
     <meta name="description" content="Expert tree care you can trust — trimming, pruning, removal, and emergency storm cleanup from a team dedicated to keeping your trees and landscape healthy year-round." />
     <title>Lehman Plant Care Co — Professional Tree Services</title>
   </head>

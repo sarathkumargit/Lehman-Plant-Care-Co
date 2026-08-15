@@ -31,8 +31,8 @@ export default function Navbar() {
             <img
               src={logo}
               alt="The Tree Service Clearence"
-              width={142}
-              height={144}
+              width={138}
+              height={140}
               fetchPriority="high"
               className="h-10 w-auto object-contain"
             />
