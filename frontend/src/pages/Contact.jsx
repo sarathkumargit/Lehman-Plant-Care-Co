@@ -5,6 +5,7 @@ import GHLOptInForm from '../components/forms/GHLOptInForm'
 import LocationMap from '../components/forms/LocationMap'
 import cutImg from '../assets/cut.webp'
 import { clamp } from '../hooks/useCinematicScroll'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import ww1 from '../assets/ww1.webp'
 
 import { siteConfig } from '../data/siteConfig'
@@ -23,6 +24,14 @@ export default function Contact() {
   const [sectionHeight, setSectionHeight] = useState(0)
   const [isDesktop, setIsDesktop] = useState(false)
   const rafRef = useRef(null)
+
+  // The map iframe and the GHL form widget (and everything it pulls in —
+  // LeadConnector's CDN, Google Maps' JS SDK, the Facebook pixel) are the
+  // heaviest things on this page. Don't mount either until this block is
+  // actually scrolled near, instead of paying for them on first paint.
+  const { ref: formAreaRef, hasIntersected: formAreaVisible } = useIntersectionObserver({
+    rootMargin: '400px 0px',
+  })
 
   // Only mount/animate the decorative image on desktop — on mobile it's
   // skipped entirely so the browser never even downloads cut.png.
@@ -74,9 +83,12 @@ export default function Contact() {
                  src={ww1}
                  alt=""
                  aria-hidden
+                 width={2225}
+                 height={1353}
+                 fetchPriority="high"
                  className="absolute inset-0 w-full h-full object-cover"
                />
-          </section>   
+          </section>
              
       <section ref={sectionRef} className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
         {/* cut.png — desktop only, travels top → bottom, fades in as it moves */}
@@ -95,6 +107,9 @@ export default function Contact() {
               src={cutImg}
               alt=""
               aria-hidden
+              width={677}
+              height={369}
+              loading="lazy"
               className="w-full h-auto object-contain"
               style={{
                 transform: `rotate(${8 - progress * 12}deg) scale(${0.85 + progress * 1})`,
@@ -133,13 +148,24 @@ export default function Contact() {
                 </div>
               ))}
 
-              {/* Map */}
-              <LocationMap />
+              {/* Map — mounted lazily below */}
+              <div ref={formAreaRef} className="min-h-[300px]">
+                {formAreaVisible ? (
+                  <LocationMap />
+                ) : (
+                  <div className="w-full h-[300px] animate-pulse rounded-3xl bg-black/10" />
+                )}
+              </div>
             </div>
 
-            {/* Form */}
+            {/* Form — only mounts (and only then loads the GHL widget's
+                JS/CDN dependencies) once this area is scrolled near */}
             <div className="lg:col-span-3 bg-[var(--color-text)] border border-[var(--color-border)] rounded-2xl p-5 sm:p-8 min-h-[600px] lg:h-[800px]">
-              <GHLOptInForm />
+              {formAreaVisible ? (
+                <GHLOptInForm />
+              ) : (
+                <div className="w-full h-full min-h-[600px] lg:min-h-0 animate-pulse rounded-xl bg-black/10" />
+              )}
             </div>
           </div>
         </div>

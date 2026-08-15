@@ -50,6 +50,9 @@ export default function CinematicHero() {
     src={bgImg}
     alt=""
     aria-hidden
+    width={2225}
+    height={1353}
+    fetchPriority="high"
     className="w-full h-full object-cover"
   />
   {/* Optional dark overlay — adjust opacity to taste */}
@@ -76,6 +79,8 @@ export default function CinematicHero() {
   src={t2Img}
   alt=""
   aria-hidden
+  width={677}
+  height={369}
   className="w-full object-contain object-top"
   style={{
     transform: `rotate(-4deg) translateY(${scrollY * 1.8}px)`,
@@ -105,6 +110,8 @@ export default function CinematicHero() {
           src={t4Img}
           alt=""
           aria-hidden
+          width={504}
+          height={495}
           className="w-full h-full object-contain object-top"
           style={{ transform: 'rotate(3deg)', transformOrigin: 'top right' }}
         />
@@ -127,6 +134,9 @@ export default function CinematicHero() {
           src={tt3Img}
           alt=""
           aria-hidden
+          width={400}
+          height={391}
+          loading="lazy"
           className="w-full h-full object-contain object-bottom"
         />
       </div>
@@ -146,7 +156,15 @@ export default function CinematicHero() {
           opacity: clamp(1 - progress * 0.7, 0, 1),
         }}
       >
-        <img src={leftImg} alt="" aria-hidden className="w-full h-full object-contain object-bottom" />
+        <img
+          src={leftImg}
+          alt=""
+          aria-hidden
+          width={400}
+          height={391}
+          fetchPriority="high"
+          className="w-full h-full object-contain object-bottom"
+        />
       </div>
 
       {/* Right — exits right */}
@@ -157,7 +175,15 @@ export default function CinematicHero() {
           opacity: clamp(1 - progress * 0.7, 0, 1),
         }}
       >
-        <img src={rightImg} alt="" aria-hidden className="w-full h-full object-contain object-bottom" />
+        <img
+          src={rightImg}
+          alt=""
+          aria-hidden
+          width={400}
+          height={391}
+          fetchPriority="high"
+          className="w-full h-full object-contain object-bottom"
+        />
       </div>
 
       {/* ══════════════════════════════════════

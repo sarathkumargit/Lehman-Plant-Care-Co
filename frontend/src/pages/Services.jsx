@@ -8,7 +8,7 @@ import ParallaxScene from '../components/sections/ParallaxScene'
 import { clamp } from '../hooks/useCinematicScroll'
 import truckImg from '../assets/truck.webp'
 import cutImg   from '../assets/cut.webp'
-import roadImg  from '../assets/road.jpg'
+import roadImg  from '../assets/road.webp'
 
 export default function Services() {
   const sectionRef = useRef(null)
@@ -61,6 +61,9 @@ export default function Services() {
             src={roadImg}
             alt=""
             aria-hidden
+            width={860}
+            height={484}
+            fetchPriority="high"
             className="w-full h-full object-cover"
             style={{
               transform: `translate3d(0, ${-progress * 60}px, 0) scale(1.15)`,
@@ -89,6 +92,9 @@ export default function Services() {
             src={cutImg}
             alt=""
             aria-hidden
+            width={677}
+            height={369}
+            loading="lazy"
             className="w-full h-auto object-contain"
             style={{
               transform: `rotate(${8 - progress * 12}deg) scale(${0.85 + progress * 0.30})`,
@@ -136,6 +142,9 @@ export default function Services() {
             src={truckImg}
             alt=""
             aria-hidden
+            width={460}
+            height={251}
+            loading="lazy"
             className="w-full h-auto object-contain"
             style={{
               transform: `scale(${1 + progress * 0.1})`,

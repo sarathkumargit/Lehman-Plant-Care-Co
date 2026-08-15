@@ -28,7 +28,14 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="The Tree Service Clearence" className="h-10 w-auto object-contain" />
+            <img
+              src={logo}
+              alt="The Tree Service Clearence"
+              width={142}
+              height={144}
+              fetchPriority="high"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

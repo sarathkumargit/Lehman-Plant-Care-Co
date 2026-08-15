@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Expert tree care you can trust — trimming, pruning, removal, and emergency storm cleanup from a team dedicated to keeping your trees and landscape healthy year-round." />
     <title>Lehman Plant Care Co — Professional Tree Services</title>
@@ -11,6 +11,13 @@
    
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script src="https://app.treeservicesclarence.com/js/form_embed.js"></script>
+    <!--
+      The GHL form-embed loader used to be loaded here, sitewide, on
+      every route. It's a form-widget vendor script (pulls in its own
+      LeadConnector/Facebook-pixel/Maps dependencies) that only has
+      anything to attach to on the Contact page, so it's now injected
+      lazily from GHLOptInForm.jsx instead, once that form actually
+      scrolls into view. See src/components/forms/GHLOptInForm.jsx.
+    -->
   </body>
 </html>

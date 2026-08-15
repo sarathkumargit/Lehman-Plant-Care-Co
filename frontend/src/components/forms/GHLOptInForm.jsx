@@ -1,11 +1,28 @@
 import { useEffect } from 'react'
 
 const IFRAME_ID = 'inline-PdF4Aecu5CcvVWhGDaOz'
+const FORM_EMBED_SCRIPT_SRC = 'https://app.treeservicesclarence.com/js/form_embed.js'
+// Origins the widget may postMessage from. The iframe itself is served
+// from link.kdlead.com, but the loader script below lives on
+// treeservicesclarence.com and both have been seen posting resize
+// events, so both are accepted.
+const ALLOWED_MESSAGE_ORIGINS = ['kdlead.com', 'treeservicesclarence.com']
 
 export default function GHLOptInForm() {
+  // Load the GHL form-embed loader script only when this form actually
+  // mounts (i.e. only on /contact, and only once the caller has scrolled
+  // it into view — see Contact.jsx), instead of sitewide from index.html.
+  useEffect(() => {
+    if (document.querySelector(`script[src="${FORM_EMBED_SCRIPT_SRC}"]`)) return
+    const script = document.createElement('script')
+    script.src = FORM_EMBED_SCRIPT_SRC
+    script.async = true
+    document.body.appendChild(script)
+  }, [])
+
   useEffect(() => {
     function handleResize(event) {
-      if (!event.origin || !event.origin.includes('treeservicesclarence.com')) return
+      if (!event.origin || !ALLOWED_MESSAGE_ORIGINS.some((o) => event.origin.includes(o))) return
       const data = event.data
       const height =
         (typeof data === 'object' && data !== null && (data.height || data?.data?.height)) || null

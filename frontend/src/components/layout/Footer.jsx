@@ -19,7 +19,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
               <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="The Tree Service Clearence" className="h-10 w-auto object-contain" />
+            <img
+              src={logo}
+              alt="The Tree Service Clearence"
+              width={142}
+              height={144}
+              loading="lazy"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
             <p className="mt-4 text-[var(--color-text-black)] max-w-sm leading-relaxed">
               {siteConfig.description}
