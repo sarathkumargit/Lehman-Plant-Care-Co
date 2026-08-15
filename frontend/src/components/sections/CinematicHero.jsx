@@ -211,7 +211,7 @@ function HeroText() {
         Premium Tree Services
       </span>
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
-        The Tree Service Clearence<br />
+        Lehman Plant Care Co<br />
 
       </h1>
       <p className="mt-4 text-emerald-100 text-sm sm:text-base md:text-lg leading-relaxed">
@@ -228,7 +228,7 @@ function HeroText() {
           href="tel:+17165892600"
           className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-emerald-500 text-lg sm:text-xl md:text-2xl text-emerald-50 font-medium px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl hover:bg-emerald-800 transition-all"
         >
-          716-589-2600
+          +1 516-347-7526
         </a>
       </div>
     </div>

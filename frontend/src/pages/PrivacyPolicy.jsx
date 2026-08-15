@@ -4,11 +4,10 @@ import ww1 from '../assets/ww1.png'
 const EFFECTIVE_DATE = 'January 19, 2025'
 const LAST_UPDATED   = 'July 9, 2026'
 
-const CONTACT_EMAIL = 'sales@treeservicesclarence.com'
-const CONTACT_PHONE = '+1 716-589-2600'
-const CONTACT_ADDR  = '9950 County Rd, Clarence Center'
-
-const COMPANY_NAME = 'The Tree Service Clearence'
+const CONTACT_EMAIL = 'sales@kdtreeservices.com'
+const CONTACT_PHONE = '+1 516-347-7526'
+const CONTACT_ADDR  = '126 Duffy Ave, Hicksville, NY 11801, United States'
+const COMPANY_NAME = 'The Lehman Plant Care Co'
 
 /* ── small presentational helpers ── */
 function Section({ id, title, children }) {
