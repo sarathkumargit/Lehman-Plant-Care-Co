@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowDown } from 'lucide-react'
 import { clamp } from '../../hooks/useCinematicScroll'
-import bgImg from '../../assets/ww1.png'
+import bgImg from '../../assets/ww1.webp'
 
-import t2Img    from '../../assets/cut.png'
-import t4Img    from '../../assets/tt11.png'
-import tt3Img   from '../../assets/tt13.png'
-import leftImg  from '../../assets/tt13.png'
-import rightImg from '../../assets/tt13.png'
-import fgImg    from '../../assets/t2.png'
+import t2Img    from '../../assets/cut.webp'
+import t4Img    from '../../assets/tt11.webp'
+import tt3Img   from '../../assets/tt13.webp'
+import leftImg  from '../../assets/tt13.webp'
+import rightImg from '../../assets/tt13.webp'
+import fgImg    from '../../assets/t2.webp'
 
 export default function CinematicHero() {
   const containerRef = useRef(null)

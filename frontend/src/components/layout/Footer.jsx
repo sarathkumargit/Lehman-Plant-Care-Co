@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 import { InstagramIcon, TwitterIcon, LinkedinIcon, FacebookIcon } from '../icons/SocialIcons'
 import { siteConfig } from '../../data/siteConfig'
 import { navLinks } from '../../data/navLinks'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 
 const socialLinks = [
   { key: 'instagram', label: 'Instagram', Icon: InstagramIcon },

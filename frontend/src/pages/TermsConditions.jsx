@@ -1,5 +1,5 @@
 import SEOHead from '../components/ui/SEOHead'
-import ww1 from '../assets/ww1.png'
+import ww1 from '../assets/ww1.webp'
 
 const EFFECTIVE_DATE = 'January 19, 2025'
 const LAST_UPDATED   = 'July 9, 2026'

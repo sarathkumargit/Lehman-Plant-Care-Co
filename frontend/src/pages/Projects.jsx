@@ -4,7 +4,7 @@ import SectionHeading from '../components/ui/SectionHeading'
 import ScrollReveal from '../components/animations/ScrollReveal'
 import { galleryImages } from '../assets/images'
 import { cn } from '../utils/cn'
-import ww1 from '../assets/ww1.png'
+import ww1 from '../assets/ww1.webp'
 
 const categories = ['All', ...new Set(galleryImages.map((i) => i.category))]
 

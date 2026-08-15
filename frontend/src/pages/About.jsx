@@ -3,7 +3,7 @@ import SectionHeading from '../components/ui/SectionHeading'
 import StatsSection from '../components/sections/StatsSection'
 import WhyChooseUs from '../components/sections/WhyChooseUs'
 import ScrollReveal from '../components/animations/ScrollReveal'
-import tt13Img from '../assets/tt13.png'
+import tt13Img from '../assets/tt13.webp'
 import g3Img from '../assets/hero4.webp'
 
 export default function About() {

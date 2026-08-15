@@ -6,8 +6,8 @@ import ScrollReveal from '../components/animations/ScrollReveal'
 import { services } from '../data/services'
 import ParallaxScene from '../components/sections/ParallaxScene'
 import { clamp } from '../hooks/useCinematicScroll'
-import truckImg from '../assets/truck.png'
-import cutImg   from '../assets/cut.png'
+import truckImg from '../assets/truck.webp'
+import cutImg   from '../assets/cut.webp'
 import roadImg  from '../assets/road.jpg'
 
 export default function Services() {

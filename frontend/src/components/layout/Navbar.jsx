@@ -6,7 +6,7 @@ import { useScrollPosition } from '../../hooks/useScrollPosition'
 import { navLinks } from '../../data/navLinks'
 import NavLink from './NavLink'
 import MobileMenu from './MobileMenu'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 
 export default function Navbar() {
   const scrollY = useScrollPosition()

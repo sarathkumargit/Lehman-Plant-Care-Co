@@ -2,7 +2,7 @@ import hero7 from './hero7.webp'
 import img1  from './img1.webp'
 import img4  from './img4.webp'
 import g3  from './g3.webp'
-import ww1   from './ww1.png'
+import ww1   from './ww1.webp'
 import img8 from './img8.webp'
 
 

@@ -4,7 +4,7 @@ import SectionHeading from '../ui/SectionHeading'
 import Button from '../ui/Button'
 import ScrollReveal from '../animations/ScrollReveal'
 import SlideIn from '../animations/SlideIn'
-import t2Img    from '../../assets/cut.png'
+import t2Img    from '../../assets/cut.webp'
 
 const features = [
   {
