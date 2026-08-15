@@ -1,5 +1,4 @@
 import hero7 from './hero7.webp'
-import t4    from './t4.png'
 import img1  from './img1.webp'
 import img4  from './img4.webp'
 import g3  from './g3.webp'
