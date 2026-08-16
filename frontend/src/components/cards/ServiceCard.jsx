@@ -16,7 +16,7 @@ export default function ServiceCard({ service, className }) {
         <h3 className="mt-4 text-xl font-bold" style={{ color: 'var(--color-text)' }}>{service.title}</h3>
         <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--color-text-primary-dark)' }}>{service.shortDescription}</p>
         <div className="mt-4 pt-4 flex items-center justify-between" style={{ borderTop: '1px solid var(--color-border)' }}>
-          <span className="text-sm font-medium" style={{ color: 'var(--color-primary)' }}>{service.price}</span>
+          <span className="text-sm font-bold" style={{ color: 'var(--color-text)' }}>{service.price}</span>
          
         </div>
       </div>

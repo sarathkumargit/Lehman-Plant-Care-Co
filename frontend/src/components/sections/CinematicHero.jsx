@@ -246,7 +246,7 @@ function HeroText() {
         Lehman Plant Care Co<br />
 
       </h1>
-      <p className="mt-4 text-emerald-200 text-sm sm:text-base md:text-lg leading-relaxed">
+      <p className="font-bold mt-4 text-black  text-sm sm:text-base md:text-lg leading-relaxed">
         Professional tree care delivered with precision, safety, and a deep respect for the environment.
       </p>
       <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 justify-center items-center">
@@ -258,7 +258,7 @@ function HeroText() {
         </Link>
         <a
           href="tel:+17165892600"
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-emerald-600 text-lg sm:text-xl md:text-2xl text-emerald-100 font-medium px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl hover:bg-emerald-800 hover:text-white transition-all"
+          className=" font-semibold w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-emerald-600 text-lg sm:text-xl md:text-2xl text-emerald-100 font-medium px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl hover:bg-emerald-800 hover:text-white transition-all"
         >
           +1 516-347-7526
         </a>

@@ -135,7 +135,7 @@ const truckX      = truckStartX + progress * (truckEndX - truckStartX)
         <ScrollReveal className="mt-12 text-center">
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 text-emerald-900 hover:text-emerald-700 font-medium transition-colors group"
+            className="border px-5 py-2.5 rounded-xl text-xl inline-flex items-center gap-2 text-emerald-950 hover:text-emerald-100 font-extrabold transition-colors group"
           >
             View all services
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
